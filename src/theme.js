@@ -63,6 +63,7 @@ export default {
   colors,
   fonts,
   fontSizes,
+  lineHeights: fontSizes,
   space,
   sizes: space
 }

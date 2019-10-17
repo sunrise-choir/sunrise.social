@@ -1,16 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { createGlobalStyle } from 'styled-components'
-import { Box, Link } from 'rebass/styled-components'
+import { Box, Link, Text } from 'rebass/styled-components'
 import reset from 'styled-reset'
 import shader from 'shader'
+import Emoji from 'a11y-react-emoji'
 
 import SEO from './seo'
 
 import 'typeface-roboto'
+import devicesCss from 'Devices.css/assets/devices.min.css'
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  ${devicesCss}
 
   * {
     box-sizing: border-box;
@@ -71,12 +74,19 @@ function Body (props) {
 
 function Footer () {
   return (
-    <Box as='footer' p={3} fontSize={1} fontFamily='body' textAlign='center'>
+    <Box
+      as='footer'
+      padding={3}
+      bg='secondary.1'
+      fontSize={[3, 4, 5]}
+      fontFamily='body'
+      textAlign='center'
+    >
       <Link
-        p={1}
+        pr={2}
         target='_window'
         href='https://github.com/sunrise-choir/sunrise.social'
-        color='primary'
+        color='primary.1'
         sx={{
           textDecoration: 'none',
           ':hover': { textDecoration: 'underline' }
@@ -85,21 +95,19 @@ function Footer () {
         sunrise.social
       </Link>
       made with
-      <span role='img' aria-label='heart' css={{ padding: '0.25rem' }}>
-        ❤️
-      </span>
+      <Text as={Emoji} px={2} symbol='❤️' label='heart' />
       by
       <Link
-        p={1}
+        pl={2}
         href='https://sunrisechoir.com'
         target='_window'
-        color='primary'
+        color='primary.1'
         sx={{
           textDecoration: 'none',
           ':hover': { textDecoration: 'underline' }
         }}
       >
-        Sunrise Choir
+        the Sunrise Choir
       </Link>
     </Box>
   )
