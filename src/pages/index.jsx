@@ -217,7 +217,7 @@ function FooterSection () {
         <ExternalLink href='https://opencollective.com/sunrise-choir'>
           our Open Collective
         </ExternalLink>
-        !
+        ! <Text as={Emoji} symbol='💸' label='money' />
       </Text>
     </Section>
   )
