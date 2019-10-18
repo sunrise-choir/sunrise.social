@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Flex, Text, Image, Link } from 'rebass/styled-components'
-import shader from 'shader'
-import { css, keyframes } from 'styled-components'
+import { keyframes } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Emoji from 'a11y-react-emoji'

@@ -1,10 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { createGlobalStyle } from 'styled-components'
-import { Box, Link, Text } from 'rebass/styled-components'
+import { Box, Flex } from 'rebass/styled-components'
 import reset from 'styled-reset'
-import shader from 'shader'
-import Emoji from 'a11y-react-emoji'
 
 import SEO from './seo'
 
@@ -39,34 +36,12 @@ const Layout = ({ header, children }) => (
   </Main>
 )
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-}
-
 function Main (props) {
-  return (
-    <Box
-      as='main'
-      {...props}
-      css={`
-        background-color: ${({ theme }) => shader('#ff', 0.95)};
-      `}
-    />
-  )
+  return <Box as='main' {...props} />
 }
 
 function Body (props) {
-  return (
-    <Box
-      {...props}
-      sx={{
-        margin: '0 auto',
-        minHeight: '100%',
-        display: 'grid',
-        gridTemplateRows: 'auto 1fr auto'
-      }}
-    />
-  )
+  return <Flex flexDirection='column' {...props} />
 }
 export default Layout
 

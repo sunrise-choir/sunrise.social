@@ -17,13 +17,10 @@
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-sharp": "^2.1.18",
     "preact": "^10.0.1",
-    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "reakit": "^1.0.0-beta.6",
     "rebass": "^4.0.2",
-    "shader": "^1.0.0",
     "styled-components": "^4.3.1",
     "styled-reset": "^2.0.15",
     "typeface-roboto": "0.0.75"
