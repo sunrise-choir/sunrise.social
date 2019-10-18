@@ -7,6 +7,7 @@ import Img from 'gatsby-image'
 import Emoji from 'a11y-react-emoji'
 
 import Layout from '../components/layout'
+import Device from '../components/device'
 import googlePlayBadge from '../images/google-play-badge.png'
 import fDroidBadge from '../images/f-droid-badge.png'
 import icon from '../images/icon.svg'
@@ -235,15 +236,9 @@ function Screenshot (props) {
         }
       `}
       render={data => (
-        <div className='marvel-device nexus5'>
-          <div className='top-bar' />
-          <div className='sleep' />
-          <div className='volume' />
-          <div className='camera' />
-          <div className='screen'>
-            <Image as={Img} fluid={data.screenshot.childImageSharp.fluid} />
-          </div>
-        </div>
+        <Device>
+          <Image as={Img} fluid={data.screenshot.childImageSharp.fluid} />
+        </Device>
       )}
     />
   )

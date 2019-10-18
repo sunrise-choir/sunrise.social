@@ -9,11 +9,9 @@ import Emoji from 'a11y-react-emoji'
 import SEO from './seo'
 
 import 'typeface-roboto'
-import devicesCss from 'Devices.css/assets/devices.min.css'
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
-  ${devicesCss}
 
   * {
     box-sizing: border-box;
