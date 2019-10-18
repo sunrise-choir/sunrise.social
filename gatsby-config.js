@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'sunrise.social',
-    description: 'A native social stack to connect off the grid',
+    description: 'A native Scuttlebutt app for offline-first social networks',
     author: 'Sunrise Choir'
   },
   plugins: [
@@ -29,8 +29,8 @@ module.exports = {
         name: 'sunrise.social',
         short_name: 'sunrise.social',
         start_url: '/',
-        background_color: '#4B2D73',
-        theme_color: '#4B2D73',
+        background_color: '#c33764',
+        theme_color: '#1d2671',
         display: 'minimal-ui',
         icon: 'src/images/icon.png'
       }
