@@ -92,10 +92,48 @@ function Hero () {
 
 function ScreensSection (props) {
   return (
-    <Section>
-      <Text mb={4}>TODO: all the Sunrise screenshots!</Text>
-      <Screenshot />
-    </Section>
+    <StaticQuery
+      query={graphql`
+        query {
+          feed: file(
+            relativePath: { eq: "screenshots/sunrise-social-feed.jpg" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          profile: file(
+            relativePath: { eq: "screenshots/sunrise-social-profile.jpg" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          search: file(
+            relativePath: { eq: "screenshots/sunrise-social-search.jpg" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <Section>
+          <Screenshot source={data.feed} />
+          <Box padding={4} />
+          <Screenshot source={data.profile} />
+          <Box padding={4} />
+          <Screenshot source={data.search} />
+        </Section>
+      )}
+    />
   )
 }
 
@@ -240,25 +278,11 @@ function DownloadBadge (props) {
 }
 
 function Screenshot (props) {
+  const { source } = props
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          screenshot: file(relativePath: { eq: "manyverse-screenshot.png" }) {
-            childImageSharp {
-              fluid(maxWidth: 1024) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <Device>
-          <Image as={Img} fluid={data.screenshot.childImageSharp.fluid} />
-        </Device>
-      )}
-    />
+    <Box as={Device}>
+      <Image as={Img} fluid={source.childImageSharp.fluid} />
+    </Box>
   )
 }
 
