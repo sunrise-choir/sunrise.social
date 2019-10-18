@@ -55,8 +55,8 @@ function Hero () {
       `linear-gradient(160deg, ${colors.primary[0]}, ${
         colors.primary[1]
       })`};
-        background-size: 200% 200%;
-        animation: ${sunriseKeyframes} 30s ease infinite;
+        background-size: 250% 250%;
+        animation: ${sunriseKeyframes} 25s ease infinite;
       `}
       sx={{
         height: '100vh',
@@ -75,7 +75,9 @@ function Hero () {
         fontWeight='bold'
         flex='1'
         sx={{
+          '-webkitTextStroke': '2px #000',
           textShadow: `
+             4px 4px 0 #000,
            -2px -2px 0 #000,  
             2px -2px 0 #000,
             -2px 2px 0 #000,
