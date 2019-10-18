@@ -224,14 +224,13 @@ function FooterSection () {
 }
 
 function Section (props) {
-  return <Box marginY={[4, 5, 6]} marginX={[2, 3, 4]} {...props} />
+  return <Box marginY={[5, 5, 6]} marginX={[2, 3, 4]} {...props} />
 }
 
 function BodyBackground (props) {
   return (
     <Box
       css={`
-        background-size: 400% 400%;
         background: ${({ theme: { colors } }) =>
       `linear-gradient(180deg, ${colors.secondary[0]}, ${
         colors.secondary[1]
