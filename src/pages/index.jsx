@@ -127,7 +127,13 @@ function ScreensSection (props) {
         }
       `}
       render={data => (
-        <Section>
+        <Section
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
           <Screenshot source={data.feed} />
           <Box padding={4} />
           <Screenshot source={data.profile} />
@@ -218,15 +224,7 @@ function FooterSection () {
 }
 
 function Section (props) {
-  return (
-    <Flex
-      margin={6}
-      flexDirection='column'
-      justifyContent='space-between'
-      alignItems='center'
-      {...props}
-    />
-  )
+  return <Box marginY={[4, 5, 6]} marginX={[2, 3, 4]} {...props} />
 }
 
 function BodyBackground (props) {
@@ -249,10 +247,7 @@ function BodyContent (props) {
     <Box
       sx={{
         margin: '0 auto',
-        maxWidth: '64rem',
-        minHeight: '100%',
-        display: 'grid',
-        gridTemplateRows: 'auto 1fr auto'
+        maxWidth: '64rem'
       }}
       {...props}
     />
@@ -265,8 +260,9 @@ function DownloadBadges (props) {
       flexDirection='row'
       justifyContent='center'
       alignItems='baseline'
+      flexWrap='wrap'
       fontSize={[5, 6, 7]}
-      margin={5}
+      marginY={5}
       {...props}
     >
       <DownloadBadge src={googlePlayBadge} />
