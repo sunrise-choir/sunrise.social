@@ -20,6 +20,7 @@ function LandingPage () {
           <ScreensSection />
           <AboutSection />
           <DownloadSection />
+          <FooterSection />
         </BodyContent>
       </BodyBackground>
     </Layout>
@@ -92,6 +93,7 @@ function Hero () {
 function ScreensSection (props) {
   return (
     <Section>
+      <Text mb={4}>TODO: all the Sunrise screenshots!</Text>
       <Screenshot />
     </Section>
   )
@@ -99,16 +101,21 @@ function ScreensSection (props) {
 
 function AboutSection (props) {
   return (
-    <Section fontSize={[5, 6, 7]} lineHeight={[4, 5, 6]}>
-      <Flex flexDirection='row' justifyContent='center' alignItems='baseline'>
+    <Section fontSize={[3, 4, 5]} lineHeight={[4, 5, 6]}>
+      <Flex
+        fontSize={[5, 6, 7]}
+        flexDirection='row'
+        justifyContent='center'
+        alignItems='baseline'
+      >
         <Text as={Emoji} mx={3} symbol='🌅' label='sunrise' />
         <Text as={Emoji} mx={3} symbol='📱' label='mobile' />
       </Flex>
-      <Text mt={5} fontSize={[3, 4, 5]}>
+      <Text mt={5}>
         <Link
           pr={2}
           target='_window'
-          href='https://github.com/sunrise-choir/sunrise.social'
+          href='https://github.com/sunrise-choir/sunrise-android'
           color='primary.1'
           fontWeight='bold'
           sx={{
@@ -116,27 +123,15 @@ function AboutSection (props) {
             ':hover': { textDecoration: 'underline' }
           }}
         >
-          sunrise.social
+          Sunrise
         </Link>
-        is a fully native Android app for the
-        <Link
-          href='https://scuttlebutt.nz'
-          target='_blank'
-          pl={2}
-          color='primary.1'
-          fontWeight='bold'
-          sx={{
-            textDecoration: 'none',
-            ':hover': { textDecoration: 'underline' }
-          }}
-        >
+        is a fully native Android app for the{' '}
+        <ExternalLink href='https://scuttlebutt.nz'>
           Scuttlebutt social network
-        </Link>
+        </ExternalLink>
         .
       </Text>
-      <Text mt={5} fontSize={[3, 4, 5]}>
-        Welcome to the solarpunk future!
-      </Text>
+      <Text mt={5}>Welcome to the solarpunk future!</Text>
       <Flex
         mt={5}
         flexDirection='row'
@@ -155,6 +150,29 @@ function DownloadSection (props) {
   return (
     <Section>
       <DownloadBadges margin={0} />
+    </Section>
+  )
+}
+
+function FooterSection () {
+  return (
+    <Section as='footer' fontSize={[3, 4, 5]} lineHeight={[4, 5, 6]}>
+      <Text>
+        <ExternalLink href='https://github.com/sunrise-choir/sunrise.social'>
+          sunrise.social
+        </ExternalLink>{' '}
+        made with <Text as={Emoji} symbol='❤️' label='heart' /> by{' '}
+        <ExternalLink href='https://sunrisechoir.com'>
+          the Sunrise Choir.
+        </ExternalLink>
+      </Text>
+      <Text mt={5}>
+        Please support{' '}
+        <ExternalLink href='https://opencollective.com/sunrise-choir'>
+          our Open Collective
+        </ExternalLink>
+        !
+      </Text>
     </Section>
   )
 }
@@ -240,6 +258,22 @@ function Screenshot (props) {
           <Image as={Img} fluid={data.screenshot.childImageSharp.fluid} />
         </Device>
       )}
+    />
+  )
+}
+
+function ExternalLink (props) {
+  const { href } = props
+  return (
+    <Link
+      href={href}
+      target='_window'
+      color='primary.1'
+      sx={{
+        textDecoration: 'none',
+        ':hover': { textDecoration: 'underline' }
+      }}
+      {...props}
     />
   )
 }

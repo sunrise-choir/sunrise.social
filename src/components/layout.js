@@ -36,7 +36,6 @@ const Layout = ({ header, children }) => (
     <GlobalStyle />
     {header}
     <Body>{children}</Body>
-    <Footer />
   </Main>
 )
 
@@ -69,48 +68,6 @@ function Body (props) {
     />
   )
 }
-
-function Footer () {
-  return (
-    <Box
-      as='footer'
-      padding={3}
-      bg='secondary.1'
-      fontSize={[3, 4, 5]}
-      fontFamily='body'
-      textAlign='center'
-    >
-      <Link
-        pr={2}
-        target='_window'
-        href='https://github.com/sunrise-choir/sunrise.social'
-        color='primary.1'
-        sx={{
-          textDecoration: 'none',
-          ':hover': { textDecoration: 'underline' }
-        }}
-      >
-        sunrise.social
-      </Link>
-      made with
-      <Text as={Emoji} px={2} symbol='❤️' label='heart' />
-      by
-      <Link
-        pl={2}
-        href='https://sunrisechoir.com'
-        target='_window'
-        color='primary.1'
-        sx={{
-          textDecoration: 'none',
-          ':hover': { textDecoration: 'underline' }
-        }}
-      >
-        the Sunrise Choir
-      </Link>
-    </Box>
-  )
-}
-
 export default Layout
 
 export function withLayout (PageComponent) {
