@@ -1,6 +1,6 @@
 # sunrise.social
 
-a landing page for [the Sunrise Social android app](https://github.com/sunrise-choir/sunrise-social-android-app
+a landing page for [the Sunrise Social android app](https://github.com/sunrise-choir/sunrise-social-android-app)
 
 ## Misc
 
