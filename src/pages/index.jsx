@@ -160,7 +160,7 @@ function AboutSection (props) {
         <Link
           pr={2}
           target='_window'
-          href='https://github.com/sunrise-choir/sunrise-android'
+          href='https://github.com/sunrise-choir/sunrise-social-android-app'
           color='primary.1'
           fontWeight='bold'
           sx={{
@@ -263,8 +263,12 @@ function DownloadBadges (props) {
       marginY={5}
       {...props}
     >
-      <DownloadBadge src={googlePlayBadge} />
-      <DownloadBadge src={fDroidBadge} />
+      <ExternalLink href="https://github.com/sunrise-choir/sunrise-social-android-app">
+        <DownloadBadge src={googlePlayBadge} />
+      </ExternalLink>
+      <ExternalLink href="https://github.com/sunrise-choir/sunrise-social-android-app">
+        <DownloadBadge src={fDroidBadge} />
+      </ExternalLink>
     </Flex>
   )
 }
