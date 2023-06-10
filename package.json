@@ -6,7 +6,7 @@
   "author": "Michael Williams <michael.williams@enspiral.com>",
   "dependencies": {
     "a11y-react-emoji": "^1.1.1",
-    "gatsby": "^2.3.24",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.0.39",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-matomo": "^0.7.2",
